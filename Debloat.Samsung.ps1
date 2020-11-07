@@ -7,22 +7,22 @@ $tweaks = @(
 	### Requires administrator privileges ###
 	"RequireAdmin",
 	"InstallADB",
-	"RemoveBixby",
-	"RemoveGeneral",
-	"RemoveSamsungPay",
-	"RemoveRecreationalApps",
-	"RemoveARemoji",
-	"RemoveStickers",
-	"RemoveFacebook",
-	"RemoveCarMode",
-	"RemoveEmail",
-	"RemoveGameLauncher",
-	"RemoveSamsungBrowser",
-	"RemoveGearVR",
-	"RemoveKidsMode",
-	"RemoveScreenCover",
-	"RemoveEdgeDisplay",
-	"RemoveDex"
+	"AskBixby",
+	"AskGeneral",
+	"AskSamsungPay",
+	"AskRecreationalApps",
+	"AskARemoji",
+	"AskStickers",
+	"AskFacebook",
+	"AskCarMode",
+	"AskEmail",
+	"AskGameLauncher",
+	"AskSamsungBrowser",
+	"AskGearVR",
+	"AskKidsMode",
+	"AskScreenCover",
+	"AskEdgeDisplay",
+	"AskDex"
 
 #Installs Chocolatey and adb
 Function InstallADB {
@@ -31,6 +31,103 @@ Function InstallADB {
 		choco install chocolatey-core.extension -y
 		Write-Output "Installing ADB"
 		choco install adb -y
+
+		}
+
+	Function Show-Menu-Ask {
+		    param(
+		        [Parameter(Mandatory)]
+		        [ValidateNotNullOrEmpty()]
+		        [string]$Title,
+
+		        [Parameter(Mandatory)]
+		        [ValidateNotNullOrEmpty()]
+		        [string]$runfuntion
+		    )
+
+		 do
+		 {
+		    Clear-Host
+		    Write-Host "================ Would you like to remove $Title? ================"
+		    Write-Host "Y: Press 'Y' to do this."
+		    Write-Host "N: Press 'N' to skip this."
+			Write-Host "Q: Press 'Q' to stop the entire script."
+		    $selection = Read-Host "Please make a selection"
+		    switch ($selection)
+		    {
+		    'y' { $runfuntion }
+		    'n' { Break }
+		    'q' { Exit  }
+		    }
+		 }
+		 until ($selection -match "y" -or $selection -match "n" -or $selection -match "q")
+		}
+
+Function AskBixby {
+			Show-Menu-Ask -Title "Bixby" -runfuntion "RemoveBixby"
+		}
+
+Function AskGeneral {
+			Show-Menu-Ask -Title "General Bloatware" -runfuntion "RemoveGeneral"
+		}
+
+Function AskSamsungpay {
+			Show-Menu-Ask -Title "SamsungPay" -runfuntion "RemoveSamsungpay"
+		}
+
+
+Function AskRecreationalApps {
+			Show-Menu-Ask -Title "Recreational Apps" -runfuntion "RemoveRecreationalApps"
+		}
+
+
+Function AskARemoji {
+			Show-Menu-Ask -Title "AR Emojis" -runfuntion "RemoveARemoji"
+		}
+
+Function AskStickers {
+			Show-Menu-Ask -Title "Samsung Stickers" -runfuntion "RemoveStickers"
+		}
+
+Function AskFacebook {
+			Show-Menu-Ask -Title "Facebook" -runfuntion "RemoveFacebook"
+		}
+
+Function AskCarMode {
+			Show-Menu-Ask -Title "Car Mode" -runfuntion "RemoveCarMode"
+		}
+
+Function AskEmail {
+			Show-Menu-Ask -Title "Samsung Email" -runfuntion "RemoveEmail"
+		}
+
+Function AskGameLauncher {
+			Show-Menu-Ask -Title "Game Launcher" -runfuntion "RemoveGameLauncher"
+		}
+
+Function AskSamsungBrowser {
+			Show-Menu-Ask -Title "Samsung Browser" -runfuntion "RemoveSamsungBrowser"
+		}
+
+Function AskGearVR {
+			Show-Menu-Ask -Title "Gear VR" -runfuntion "RemoveGearVR"
+		}
+
+Function AskKidsMode {
+Show-Menu-Ask -Title "Kids Mode" -runfuntion "RemoveKidsMode"
+}
+
+Function AskScreenCover {
+Show-Menu-Ask -Title "Screencover" -runfuntion "RemoveScreenCover"
+}
+
+Function AskEdgeDisplay {
+Show-Menu-Ask -Title "Edge Display" -runfuntion "RemoveEdgeDisplay"
+}
+
+Function AskDex {
+Show-Menu-Ask -Title "Samsung Dex" -runfuntion "RemoveDex"
+}
 
 #Removes Bixby and all Bixby components
 Function RemoveBixby {
