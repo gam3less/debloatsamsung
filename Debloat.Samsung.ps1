@@ -23,6 +23,7 @@ $tweaks = @(
 	"AskScreenCover",
 	"AskEdgeDisplay",
 	"AskDex"
+)
 
 #Installs Chocolatey and adb
 Function InstallADB {
@@ -33,7 +34,7 @@ Function InstallADB {
 		choco install adb -y
 
 		}
-
+# Menu that asks questions
 	Function Show-Menu-Ask {
 		    param(
 		        [Parameter(Mandatory)]
@@ -42,93 +43,95 @@ Function InstallADB {
 
 		        [Parameter(Mandatory)]
 		        [ValidateNotNullOrEmpty()]
-		        [string]$runfuntion
+		        [string]$runfunction
 		    )
 
 		 do
 		 {
 		    Clear-Host
-		    Write-Host "================ Would you like to remove $Title? ================"
+		    Write-Host "================ Would you like to remove $Title ? ================"
 		    Write-Host "Y: Press 'Y' to do this."
 		    Write-Host "N: Press 'N' to skip this."
 			Write-Host "Q: Press 'Q' to stop the entire script."
 		    $selection = Read-Host "Please make a selection"
 		    switch ($selection)
 		    {
-		    'y' { $runfuntion }
+		    'y' { &$runfunction }
 		    'n' { Break }
 		    'q' { Exit  }
 		    }
 		 }
 		 until ($selection -match "y" -or $selection -match "n" -or $selection -match "q")
 		}
-
+#Specifys what to do in the Show-Menu-Ask
 Function AskBixby {
-			Show-Menu-Ask -Title "Bixby" -runfuntion "RemoveBixby"
+			Show-Menu-Ask -Title "Bixby" -runfunction "RemoveBixby"
 		}
 
 Function AskGeneral {
-			Show-Menu-Ask -Title "General Bloatware" -runfuntion "RemoveGeneral"
+			Show-Menu-Ask -Title "General Bloatware" -runfunction "RemoveGeneral"
 		}
 
 Function AskSamsungpay {
-			Show-Menu-Ask -Title "SamsungPay" -runfuntion "RemoveSamsungpay"
+			Show-Menu-Ask -Title "SamsungPay" -runfunction "RemoveSamsungpay"
 		}
 
 
 Function AskRecreationalApps {
-			Show-Menu-Ask -Title "Recreational Apps" -runfuntion "RemoveRecreationalApps"
+			Show-Menu-Ask -Title "Recreational Apps" -runfunction "RemoveRecreationalApps"
 		}
 
 
 Function AskARemoji {
-			Show-Menu-Ask -Title "AR Emojis" -runfuntion "RemoveARemoji"
+			Show-Menu-Ask -Title "AR Emojis" -runfunction "RemoveARemoji"
 		}
 
 Function AskStickers {
-			Show-Menu-Ask -Title "Samsung Stickers" -runfuntion "RemoveStickers"
+			Show-Menu-Ask -Title "Samsung Stickers" -runfunction "RemoveStickers"
 		}
 
 Function AskFacebook {
-			Show-Menu-Ask -Title "Facebook" -runfuntion "RemoveFacebook"
+			Show-Menu-Ask -Title "Facebook" -runfunction "RemoveFacebook"
 		}
 
 Function AskCarMode {
-			Show-Menu-Ask -Title "Car Mode" -runfuntion "RemoveCarMode"
+			Show-Menu-Ask -Title "Car Mode" -runfunction "RemoveCarMode"
 		}
 
 Function AskEmail {
-			Show-Menu-Ask -Title "Samsung Email" -runfuntion "RemoveEmail"
+			Show-Menu-Ask -Title "Samsung Email" -runfunction "RemoveEmail"
 		}
 
 Function AskGameLauncher {
-			Show-Menu-Ask -Title "Game Launcher" -runfuntion "RemoveGameLauncher"
+			Show-Menu-Ask -Title "Game Launcher" -runfunction "RemoveGameLauncher"
 		}
 
 Function AskSamsungBrowser {
-			Show-Menu-Ask -Title "Samsung Browser" -runfuntion "RemoveSamsungBrowser"
+			Show-Menu-Ask -Title "Samsung Browser" -runfunction "RemoveSamsungBrowser"
 		}
 
 Function AskGearVR {
-			Show-Menu-Ask -Title "Gear VR" -runfuntion "RemoveGearVR"
+			Show-Menu-Ask -Title "Gear VR" -runfunction "RemoveGearVR"
 		}
 
 Function AskKidsMode {
-Show-Menu-Ask -Title "Kids Mode" -runfuntion "RemoveKidsMode"
+Show-Menu-Ask -Title "Kids Mode" -runfunction "RemoveKidsMode"
 }
 
 Function AskScreenCover {
-Show-Menu-Ask -Title "Screencover" -runfuntion "RemoveScreenCover"
+Show-Menu-Ask -Title "Screencover" -runfunction "RemoveScreenCover"
 }
 
 Function AskEdgeDisplay {
-Show-Menu-Ask -Title "Edge Display" -runfuntion "RemoveEdgeDisplay"
+Show-Menu-Ask -Title "Edge Display" -runfunction "RemoveEdgeDisplay"
 }
 
 Function AskDex {
-Show-Menu-Ask -Title "Samsung Dex" -runfuntion "RemoveDex"
+Show-Menu-Ask -Title "Samsung Dex" -runfunction "RemoveDex"
 }
-
+#####
+# Place a # before anything you dont want to remove
+#####
 #Removes Bixby and all Bixby components
 Function RemoveBixby {
 	adb shell pm uninstall --user 0 com.samsung.android.bixby.wakeup
@@ -156,7 +159,6 @@ Function RemoveGeneral {
 	adb shell pm uninstall --user 0 com.samsung.android.app.dressroom # Samsung Wallpapers
 	adb shell pm uninstall --user 0 com.samsung.android.scloud # Samsung Cloud
 	adb shell pm uninstall --user 0 com.samsung.android.sdk.handwriting # Handwriting for Note Devices
-	adb shell pm uninstall --user 0 com.samsung.android.sdk.professionalaudio.utility.jammonitor # Checks Headphone port
 	adb shell pm uninstall --user 0 com.samsung.android.universalswitch # Certain gestures
 	adb shell pm uninstall --user 0 com.samsung.android.widgetapp.yahooedge.finance # Yahoo app
 	adb shell pm uninstall --user 0 com.samsung.android.widgetapp.yahooedge.sport # Yahoo app
@@ -264,7 +266,7 @@ Function RequireAdmin {
 		Exit
 	}
 }
-)
+
 
 ##########
 # Parse parameters and apply tweaks, By Disassembler
