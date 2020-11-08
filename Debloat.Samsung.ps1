@@ -1,5 +1,5 @@
 # Note: Some of the code was made by Disassembler <disassembler@dasm.cz> <https://github.com/Disassembler0/>
-# The code made by him is marked, anything not marked was made by yours truly (Gam3less)
+# The code made by them is marked, anything not marked was made by yours truly (Gam3less)
 #
 # !!! Note: Never run scripts without reading them & understanding what they do.
 
@@ -7,6 +7,7 @@ $tweaks = @(
 	### Requires administrator privileges ###
 	"RequireAdmin",
 	"InstallADB",
+	"HowTo",
 	"AskBixby",
 	"AskGeneral",
 	"AskSamsungPay",
@@ -24,13 +25,45 @@ $tweaks = @(
 	"AskEdgeDisplay",
 	"AskDex"
 )
+# Explains to the user what to do and asks
+Function HowTo {
+	do
+ {
+    Clear-Host
+		Write-Host "====== How to get device ready ======"
+		Write-Host "Go to Settings > About Phone > Software Infomation"
+		Write-Host "Tap on 'Build Number' until it enables developer mode (Insert pin)"
+		Write-Host "Go back to settings and go into 'Developer options'"
+		Write-Host "Find 'USB debugging' and enable it"
+		Write-Host "Plug device into your computer and press allow"
+		Write-Host "Make sure only one device is plugged in"
+		Write-Host ""
+		Write-Host "Re-run this script after you have done this."
+		Write-host ""
+		adb devices
+		Write-Host ""
+		Write-Host "If it says 'Unauthorised' unplug the cable for your phone, plug it back in and press allow"
+		Write-Host ""
+		Write-Host "Does it say there is a device?"
+	  Write-Host "Y: Yes"
+    Write-Host "N: No"
+    $pluggedin = Read-Host "Please make a selection"
+    switch ($pluggedin)
+    {
+	'y' { adb devices }
+	'n' { Exit }
+    }
+ }
+ until ($pluggedin -match "y" -or $pluggedin -match "n" )
+
+}
 
 #Installs Chocolatey and adb
 Function InstallADB {
-		Write-Output "Installing Chocolatey"
+		Write-Host "Installing Chocolatey"
 		Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
 		choco install chocolatey-core.extension -y
-		Write-Output "Installing ADB"
+		Write-Host "Installing ADB"
 		choco install adb -y
 
 		}
