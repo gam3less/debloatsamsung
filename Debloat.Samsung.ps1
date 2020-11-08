@@ -32,13 +32,13 @@ Function HowTo {
     Clear-Host
 		Write-Host "====== How to get device ready ======"
 		Write-Host "Go to Settings > About Phone > Software Infomation"
-		Write-Host "Tap on 'Build Number' until it enables developer mode (Insert pin)"
+		Write-Host "Tap on 'Build Number' 7 times or until it enables developer mode (Insert pin)"
 		Write-Host "Go back to settings and go into 'Developer options'"
 		Write-Host "Find 'USB debugging' and enable it"
 		Write-Host "Plug device into your computer and press allow"
 		Write-Host "Make sure only one device is plugged in"
 		Write-Host ""
-		Write-Host "Re-run this script after you have done this."
+		Write-Host "Type 'R' to re-run the script after you have done this."
 		Write-host ""
 		adb devices
 		Write-Host ""
@@ -47,26 +47,30 @@ Function HowTo {
 		Write-Host "Does it say there is a device?"
 	  Write-Host "Y: Yes"
     Write-Host "N: No"
+		Write-Host "R: Re-runs the script"
     $pluggedin = Read-Host "Please make a selection"
     switch ($pluggedin)
     {
 	'y' { adb devices }
 	'n' { Exit }
+	'r' { Howto }
     }
  }
- until ($pluggedin -match "y" -or $pluggedin -match "n" )
-
+ until ($pluggedin -match "y" -or $pluggedin -match "n" -or $pluggedin -match "r")
 }
 
 #Installs Chocolatey and adb
 Function InstallADB {
+		Clear-Host
 		Write-Host "Installing Chocolatey"
 		Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
 		choco install chocolatey-core.extension -y
+		Clear-Host
 		Write-Host "Installing ADB"
 		choco install adb -y
 
 		}
+
 # Menu that asks questions
 Function Show-Menu-Ask {
 		    param(
@@ -98,11 +102,36 @@ Function Show-Menu-Ask {
 #Specifys what to do in the Show-Menu-Ask
 Function AskBixby {
 			Clear-Host
+			Write-Host "This removes all bixby components."
 			Show-Menu-Ask -Title "Bixby" -runfunction "RemoveBixby"
 		}
 
 Function AskGeneral {
 			Clear-Host
+			Write-Host ""
+			Write-Host "-This will remove:"
+			Write-Host "-Android Easter Egg"
+			Write-Host "-One hand mode"
+			Write-Host "-Galaxy Friends"
+			Write-Host "-Galaxy Watch"
+			Write-Host "-Samsung Weather"
+			Write-Host "-What's New"
+			Write-Host "-Voice Recorder"
+			Write-Host "-Smart Things"
+			Write-Host "-Samsung Members"
+			Write-Host "-Google feedback"
+			Write-Host "-Samsung Wallpapers"
+			Write-Host "-Samsung Cloud"
+			Write-Host "-Handwriting for Note Devices"
+			Write-Host "-Certain gestures"
+			Write-Host "-Yahoo finance"
+			Write-Host "-Yahoo sport"
+			Write-Host "-Secret Debugging tool"
+			Write-Host "-Story service"
+			Write-Host "-Air command"
+			Write-Host "-AR Doodle"
+			Write-Host "-S voice (Old Bixby)"
+			Write-Host ""
 			Show-Menu-Ask -Title "General Bloatware" -runfunction "RemoveGeneral"
 		}
 
@@ -111,12 +140,17 @@ Function AskSamsungpay {
 			Show-Menu-Ask -Title "SamsungPay" -runfunction "RemoveSamsungpay"
 		}
 
-
 Function AskRecreationalApps {
 			Clear-Host
+			Write-Host ""
+			Write-Host "-This will remove:"
+			Write-Host "-Flipboard app"
+			Write-Host "-Digital wellbeing"
+			Write-Host "-Dual Messenger"
+			Write-Host "-Live Message"
+			Write-Host ""
 			Show-Menu-Ask -Title "Recreational Apps" -runfunction "RemoveRecreationalApps"
 		}
-
 
 Function AskARemoji {
 			Clear-Host
@@ -357,7 +391,6 @@ Function RequireAdmin {
 		Exit
 	}
 }
-
 
 ##########
 # Parse parameters and apply tweaks, By Disassembler
