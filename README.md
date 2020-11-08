@@ -39,5 +39,5 @@ Chris: His videos gave me the idea to make this script.
 Alix: Found some missing brackets and helped make the script run.
 <https://github.com/Alex-ABWorld>
 
-Katie: For trying to help my dumbass. 
+Katie: For trying to help my dumbass. And suggesting I tell the user how to get there device ready and make sure they only have one devices plugged in.
 <https://github.com/CtrlAltCuteness>
