@@ -36,7 +36,7 @@ Disassembler: Some of the code I used was made by him.
 Chris: His videos gave me the idea to make this script.
 <https://christitus.com/>
 
-Alix: Found some missing brackets and helped make the script run.
+Alex: Found some missing brackets and helped make the script run.
 <https://github.com/Alex-ABWorld>
 
 Katie: For trying to help my dumbass. And suggesting I tell the user how to get there device ready and make sure they only have one device plugged in.
