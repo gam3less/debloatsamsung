@@ -217,10 +217,12 @@ Function AskDex {
 #####
 # Place a # before anything you dont want to remove
 #####
-#Removes Bixby and all Bixby components
+
+# Removes Bixby and all Bixby components, F**k thats a lot of bixby components
 Function RemoveBixby {
 	Write-Host "Removing Bixby..."
-	adb shell pm uninstall --user 0 com.samsung.android.bixby.wakeup
+	adb shell pm uninstall --user 0 com.samsung.android.app.spage # Hello Bixby
+	adb shell pm uninstall --user 0 com.samsung.android.bixby.wakeup # Bixby Wakeup
 	adb shell pm uninstall --user 0 com.samsung.android.app.spage # Bixby homepage launcher
 	adb shell pm uninstall --user 0 com.samsung.android.app.routines # Bixby Routines
 	adb shell pm uninstall --user 0 com.samsung.android.bixby.service # Bixby features
@@ -293,6 +295,7 @@ Function RemoveSamsungPay {
 
 Function RemoveRecreationalApps {
 	Write-Host "Removing Flipboard..."
+	adb shell pm uninstall --user 0 comflipboard.app
 	adb shell pm uninstall --user 0 flipboard.boxer.app # Flipboard app
 	Write-Host "Removing Digital Wellbeing..."
 	adb shell pm uninstall --user 0 com.samsung.android.wellbeing # Digital wellbeing

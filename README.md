@@ -11,6 +11,8 @@ Trello: https://trello.com/b/YZOdDKBz/
 
 ## Description
 
+If you would like to see a list of apps this script can remove check out App List.txt
+
 This is a PowerShell script that uses the ADB to uninstall bloatware from Samsung devices.
 It askes you if you would like to remove it on the way.
 
@@ -19,10 +21,10 @@ Note: Never run scripts without reading them & understanding what they do.
 &nbsp;
 
 ## Usage
-If you would just like to run the script as it is run the following command in powershell:
+If you would just like to run the script as it is run the following command in powershell (Run it as a administrator):
 
-  powershell -nop -c "iex(New-Object Net.WebClient).DownloadString('https://git.io/JkvBP')"
-  
+          powershell -nop -c "iex(New-Object Net.WebClient).DownloadString('https://git.io/JkvBP')"
+
 If you want to edit the script feel free to download it and run it.
 
 &nbsp;

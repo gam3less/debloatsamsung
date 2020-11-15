@@ -1,18 +1,18 @@
-adb shell pm uninstall --user 0 com.samsung.android.app.spage # Hello Bixby?
+
 adb shell pm uninstall --user 0 com.android.exchange # Part of Email App?
 
-adb shell pm uninstall --user 0 com.android.bips #communication app
-adb shell pm uninstall --user 0 com.android.chrome # Chrome Web Browser
 adb shell pm uninstall --user 0 com.android.dreams.basic # Like Screensavers (Daydreams)
 adb shell pm uninstall --user 0 com.android.dreams.phototable # Componate of Daydreams
 adb shell pm uninstall --user 0 com.android.email # Email App
-adb shell pm uninstall --user 0 com.android.hotwordenrollment.okgoogle # Ok google hot word
 
 adb shell pm uninstall --user 0 com.audible.application # Audible
 adb shell pm uninstall --user 0 com.blurb.checkout # Blurb
 adb shell pm uninstall --user 0 com.cequint.ecid # City ID
-
-
+adb shell pm uninstall --user 0 com.singtel.mysingtel # Singtel
+adb shell pm uninstall --user 0 com.skype.raider # Skype
+adb shell pm uninstall --user 0 com.tripadvisor.tripadvisor # Tripadvisor
+adb shell pm uninstall --user 0 com.vlingo.midas # Vlingo
+adb shell pm uninstall --user 0 comtv.peel.samsung.app # Peel Smart  Remote
 
 adb shell pm uninstall --user 0 com.diotek.sec.lookup.dictionary # Dictionary
 
@@ -242,26 +242,3 @@ adb shell pm uninstall --user 0 com.sec.usbsettings
 adb shell pm uninstall --user 0 com.sec.vowifispg
 adb shell pm uninstall --user 0 com.sec.yosemite.phone
 adb shell pm uninstall --user 0 com.sem.factoryapp
-
-adb shell pm uninstall --user 0 com.singtel.mysingtel
-
-adb shell pm uninstall --user 0 com.skms.android.agent
-
-adb shell pm uninstall --user 0 com.skype.raider
-
-adb shell pm uninstall --user 0 com.test.LTEfunctionality
-
-adb shell pm uninstall --user 0 com.tripadvisor.tripadvisor
-
-adb shell pm uninstall --user 0 com.trustonic.tuiservice
-
-adb shell pm uninstall --user 0 com.vlingo.midas
-
-adb shell pm uninstall --user 0 com.wsomacp
-
-adb shell pm uninstall --user 0 com.wssnps
-
-adb shell pm uninstall --user 0 comflipboard.app
-adb shell pm uninstall --user 0 comflipboard.boxer.app
-
-adb shell pm uninstall --user 0 comtv.peel.samsung.app
