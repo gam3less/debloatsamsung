@@ -23,7 +23,6 @@ com.android.vpndialogs
 com.samsung.android.app.dressroom # Samsung Wallpapers
 com.samsung.android.scloud # Samsung Cloud
 com.samsung.android.sdk.handwriting # Handwriting for Note Devices
-com.samsung.android.sdk.professionalaudio.utility.jammonitor # Checks Headphone port
 com.samsung.android.universalswitch # Certain gestures
 com.samsung.android.widgetapp.yahooedge.finance # Yahoo app
 com.samsung.android.widgetapp.yahooedge.sport # Yahoo app

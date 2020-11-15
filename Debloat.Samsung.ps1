@@ -228,6 +228,12 @@ Function RemoveBixby {
 	adb shell pm uninstall --user 0 com.samsung.android.bixby.agent # Bixby Voice
 	adb shell pm uninstall --user 0 com.samsung.android.bixby.agent.dummy # Bixby debug app
 	adb shell pm uninstall --user 0 com.samsung.android.bixbyvision.framework # Bixby Vision framework
+	adb shell pm uninstall --user 0 com.samsung.android.app.settings.bixby # Bixby settings
+	adb shell pm uninstall --user 0 com.samsung.android.bixby.es.globalaction # Possible Language?
+	adb shell pm uninstall --user 0 com.samsung.android.bixby.plmsync
+	adb shell pm uninstall --user 0 com.samsung.android.bixby.voiceinput
+	adb shell pm uninstall --user 0 com.samsung.systemui.bixby # System UI of Bixby
+	adb shell pm uninstall --user 0 com.samsung.systemui.bixby2 # System UI of Bixby
 }
 
 Function RemoveGeneral {
@@ -300,10 +306,14 @@ Function RemoveARemoji {
 	Write-Host "Removing AR Emojis..."
 	adb shell pm uninstall --user 0 com.samsung.android.aremoji # AR Emoji
 	adb shell pm uninstall --user 0 com.sec.android.mimage.avatarstickers # Stickers for AR Emoji app
+	adb shell pm uninstall --user 0 com.samsung.android.ardrawing
+	adb shell pm uninstall --user 0 com.samsung.android.arzone
 }
 
 Function RemoveStickers {
 	Write-Host "Removing Stickers..."
+	adb shell pm uninstall --user 0 com.samsung.android.app.camera.sticker.facear3d.preload
+	adb shell pm uninstall --user 0 com.samsung.android.app.camera.sticker.facearavatar.preload
 	adb shell pm uninstall --user 0 com.samsung.android.app.camera.sticker.stamp.preload
 	adb shell pm uninstall --user 0 com.samsung.android.stickercenter
 	adb shell pm uninstall --user 0 com.samsung.android.stickerplugin
@@ -365,6 +375,7 @@ Function RemoveScreenCover {
 	Write-Host "Removing Screen Cover..."
 	adb shell pm uninstall --user 0 com.samsung.android.app.ledbackcover # Used with samsung cases
 	adb shell pm uninstall --user 0 com.sec.android.cover.ledcover # Used with samsung cases
+	adb shell pm uninstall --user 0 com.samsung.android.app.ledcoverdream # Led Cover Screensaver
 }
 
 Function RemoveEdgeDisplay {
