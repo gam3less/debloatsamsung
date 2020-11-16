@@ -236,6 +236,7 @@ Function RemoveBixby {
 	adb shell pm uninstall --user 0 com.samsung.android.bixby.voiceinput
 	adb shell pm uninstall --user 0 com.samsung.systemui.bixby # System UI of Bixby
 	adb shell pm uninstall --user 0 com.samsung.systemui.bixby2 # System UI of Bixby
+	adb shell pm uninstall --user 0 com.samsung.android.voicewakeup # Bixby Wakeup
 }
 
 Function RemoveGeneral {
@@ -282,6 +283,32 @@ Function RemoveGeneral {
 	adb shell pm uninstall --user 0 com.samsung.android.ardrawing # AR Doodle
 	Write-Host "Removing S voice..."
 	adb shell pm uninstall --user 0 com.samsung.android.svoiceime # S voice (Old Bixby)
+	adb shell pm uninstall --user 0 com.samsung.android.svoice # Samsung Voice
+	adb shell pm uninstall --user 0 com.samsung.svoice.sync # Samsung Voice Component
+	Write-Host "Removing Audible..."
+	adb shell pm uninstall --user 0 com.audible.application # Audible
+	Write-Host "Removing Blurb..."
+	adb shell pm uninstall --user 0 com.blurb.checkout # Blurb
+	Write-Host "Removing City ID..."
+	adb shell pm uninstall --user 0 com.cequint.ecid # City ID
+	Write-Host "Removing Singtel..."
+	adb shell pm uninstall --user 0 com.singtel.mysingtel # Singtel
+	Write-Host "Removing Skype..."
+	adb shell pm uninstall --user 0 com.skype.raider # Skype
+	Write-Host "Removing Tripadvisor..."
+	adb shell pm uninstall --user 0 com.tripadvisor.tripadvisor # Tripadvisor
+	Write-Host "Removing Vlingo..."
+	adb shell pm uninstall --user 0 com.vlingo.midas # Vlingo
+	Write-Host "Removing Peel Smart Remote..."
+	adb shell pm uninstall --user 0 comtv.peel.samsung.app # Peel Smart  Remote
+	Write-Host "Removing NFL App..."
+	adb shell pm uninstall --user 0 com.gotv.nflgamecenter.us.lite # NFL app
+	Write-Host "Removing Hancom..."
+	adb shell pm uninstall --user 0 com.hancom.office.editor.hidden # Korean Office Suite
+	Write-Host "Removing IMDb..."
+	adb shell pm uninstall --user 0 com.imdb.mobile # IMDb App
+	Write-Host "Removing Tachyon..."
+	adb shell pm uninstall --user 0 com.google.android.apps.tachyon # A Pre-installed Game
 }
 
 Function RemoveSamsungPay {
@@ -303,6 +330,10 @@ Function RemoveRecreationalApps {
 	adb shell pm uninstall --user 0 com.samsung.android.da.daagent # Dual Messenger
 	Write-Host "Removing Live Message..."
 	adb shell pm uninstall --user 0 com.samsung.android.service.livedrawing # Live Message
+	Write-Host "Removing OneDrive..."
+	adb shell pm uninstall --user 0 com.microsoft.skydrive # One Drive
+	Write-Host "Removing Lookup Dictionary"
+	adb shell pm uninstall --user 0 com.diotek.sec.lookup.dictionary # Dictionary
 }
 
 Function RemoveARemoji {
@@ -387,6 +418,12 @@ Function RemoveEdgeDisplay {
 	adb shell pm uninstall --user 0 com.samsung.android.service.peoplestripe # Edge panel plugin for contacts
 	adb shell pm uninstall --user 0 com.samsung.android.app.sbrowseredge # Edge panel plugin for Samsung Internet
 	adb shell pm uninstall --user 0 com.samsung.android.app.appsedge # App panel plugin for Edge display
+	adb shell pm uninstall --user 0 com.samsung.android.app.appsedge
+	adb shell pm uninstall --user 0 com.samsung.android.app.clipboardedge
+	adb shell pm uninstall --user 0 com.samsung.android.app.sbrowseredge
+	adb shell pm uninstall --user 0 com.samsung.android.app.cocktailbarservice # Clock along side edge
+	adb shell pm uninstall --user 0 com.samsung.android.app.taskedge
+	adb shell pm uninstall --user 0 com.yelp.android.samsungedge
 }
 
 Function RemoveDex {
