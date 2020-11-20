@@ -52,7 +52,6 @@
 	adb shell pm uninstall --user 0 com.hancom.office.editor.hidden # Korean Office Suite
 	adb shell pm uninstall --user 0 com.imdb.mobile # IMDb App
 	adb shell pm uninstall --user 0 com.google.android.apps.tachyon # A Pre-installed Game
-
 	adb shell pm uninstall --user 0 com.infraware.polarisoffice5 # Polaris Viewer
 	adb shell pm uninstall --user 0 com.nuance.swype.input # Old Keyboard
 	adb shell pm uninstall --user 0 com.samsung.android.mobileservice # Samsung Experience
@@ -81,7 +80,6 @@
 	adb shell pm uninstall --user 0 com.samsung.android.service.livedrawing # Live Message
 	adb shell pm uninstall --user 0 com.microsoft.skydrive # One Drive
 	adb shell pm uninstall --user 0 com.diotek.sec.lookup.dictionary # Dictionary
-
 	adb shell pm uninstall --user 0 com.samsung.groupcast # Share files with other galaxy devices
 	adb shell pm uninstall --user 0 com.samsung.android.app.storyalbumwidget # Widget for Storys
 
@@ -165,16 +163,11 @@
 	adb shell pm uninstall --user 0 com.samsung.desktopsystemui
 	adb shell pm uninstall --user 0 com.sec.android.app.desktoplauncher
 
-
-ADD FROM HERE
 # Mircosoft Office
 	adb shell pm uninstall --user 0 com.microsoft.appmanager
 	adb shell pm uninstall --user 0 com.microsoft.office.excel
 	adb shell pm uninstall --user 0 com.microsoft.office.powerpoint
 	adb shell pm uninstall --user 0 com.microsoft.office.word
-
-# Youtube App
-	adb shell pm uninstall --user 0 com.google.android.youtube
 
 # Google Apps
 	adb shell pm uninstall --user 0 com.google.android.apps.books # Google Books
@@ -182,3 +175,6 @@ ADD FROM HERE
 	adb shell pm uninstall --user 0 com.google.android.apps.magazines # NewsStand
 	adb shell pm uninstall --user 0 com.google.android.apps.plus # GooglePlus
 	adb shell pm uninstall --user 0 com.google.android.talk # Hangouts
+
+	# Youtube App (Have Not Added Yet)
+		adb shell pm uninstall --user 0 com.google.android.youtube
