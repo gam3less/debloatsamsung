@@ -23,7 +23,9 @@ $tweaks = @(
 	"AskKidsMode",
 	"AskScreenCover",
 	"AskEdgeDisplay",
-	"AskDex"
+	"AskDex",
+	"AskGoogleApps",
+	"AskOffice"
 )
 # Explains to the user what to do and asks
 Function HowTo {
