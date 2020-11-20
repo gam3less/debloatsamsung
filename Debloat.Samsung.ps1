@@ -230,6 +230,16 @@ Function AskDex {
 			Clear-Host
 			Show-Menu-Ask -Title "Samsung Dex" -runfunction "RemoveDex"
 		}
+
+Function AskGoogleApps {
+	Clear-Host
+	Show-Menu-Ask -Title "Google Apps" -runfunction "RemoveGoogleApps"
+}
+
+Function AskOffice {
+	Clear-Host
+	Show-Menu-Ask -Title "Microsoft Office" -runfunction "RemoveOffice"
+}
 #####
 # Place a # before anything you dont want to remove
 #####
@@ -325,6 +335,19 @@ Function RemoveGeneral {
 	adb shell pm uninstall --user 0 com.imdb.mobile # IMDb App
 	Write-Host "Removing Tachyon..."
 	adb shell pm uninstall --user 0 com.google.android.apps.tachyon # A Pre-installed Game
+
+	adb shell pm uninstall --user 0 com.infraware.polarisoffice5 # Polaris Viewer
+	adb shell pm uninstall --user 0 com.nuance.swype.input # Old Keyboard
+	adb shell pm uninstall --user 0 com.samsung.android.mobileservice # Samsung Experience
+	adb shell pm uninstall --user 0 com.samsung.android.scloud # Samsung Cloud
+	adb shell pm uninstall --user 0 com.samsung.android.service.livedrawing # Samsung Live Drawings
+	adb shell pm uninstall --user 0 com.samsung.android.service.travel # Samsung Experience Component
+	adb shell pm uninstall --user 0 com.samsung.android.tripwidget # Part of Travel App
+	adb shell pm uninstall --user 0 com.samsung.fresco.logging # App that Logs things
+	adb shell pm uninstall --user 0 com.samsung.voiceserviceplatform # Samsung Voice Component
+	adb shell pm uninstall --user 0 com.samsung.android.app.episodes # Story Album
+	adb shell pm uninstall --user 0 com.samsung.android.app.galaxyfinder # S finder
+	adb shell pm uninstall --user 0 com.samsung.android.app.mirrorlink # Connects phone with car
 }
 
 Function RemoveSamsungPay {
@@ -350,6 +373,9 @@ Function RemoveRecreationalApps {
 	adb shell pm uninstall --user 0 com.microsoft.skydrive # One Drive
 	Write-Host "Removing Lookup Dictionary"
 	adb shell pm uninstall --user 0 com.diotek.sec.lookup.dictionary # Dictionary
+
+	adb shell pm uninstall --user 0 com.samsung.groupcast # Share files with other galaxy devices
+	adb shell pm uninstall --user 0 com.samsung.android.app.storyalbumwidget # Widget for Storys
 }
 
 Function RemoveARemoji {
@@ -426,6 +452,10 @@ Function RemoveScreenCover {
 	adb shell pm uninstall --user 0 com.samsung.android.app.ledbackcover # Used with samsung cases
 	adb shell pm uninstall --user 0 com.sec.android.cover.ledcover # Used with samsung cases
 	adb shell pm uninstall --user 0 com.samsung.android.app.ledcoverdream # Led Cover Screensaver
+
+	adb shell pm uninstall --user 0 com.android.dreams.basic # Like Screensavers (Daydreams)
+	adb shell pm uninstall --user 0 com.android.dreams.phototable # Componate of Daydreams
+	adb shell pm uninstall --user 0 com.samsung.daydream.customization # Daydream component
 }
 
 Function RemoveEdgeDisplay {
@@ -448,6 +478,23 @@ Function RemoveDex {
 	adb shell pm uninstall --user 0 com.sec.android.desktopmode.uiservice
 	adb shell pm uninstall --user 0 com.samsung.desktopsystemui
 	adb shell pm uninstall --user 0 com.sec.android.app.desktoplauncher
+}
+
+Function RemoveGoogleApps {
+	Write-Host "Removing Google Books..."
+	adb shell pm uninstall --user 0 com.google.android.apps.books # Google Books
+	adb shell pm uninstall --user 0 com.google.android.apps.docs # Google Docs
+	adb shell pm uninstall --user 0 com.google.android.apps.magazines # NewsStand
+	adb shell pm uninstall --user 0 com.google.android.apps.plus # GooglePlus
+	adb shell pm uninstall --user 0 com.google.android.talk # Hangouts
+}
+
+Function RemoveOffice {
+	Write-Host "Removing Microsoft Office..."
+	adb shell pm uninstall --user 0 com.microsoft.appmanager
+	adb shell pm uninstall --user 0 com.microsoft.office.excel
+	adb shell pm uninstall --user 0 com.microsoft.office.powerpoint
+	adb shell pm uninstall --user 0 com.microsoft.office.word
 }
 
 # Relaunch the script with administrator privileges, By Disassembler
