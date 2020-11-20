@@ -10,6 +10,7 @@ Trello: https://trello.com/b/YZOdDKBz/
 &nbsp;
 
 ## Description
+I personally test this on my own device to make sure nothing breaks.
 
 If you would like to see a list of apps this script can remove check out App List.txt
 
