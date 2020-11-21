@@ -147,6 +147,18 @@ Function AskGeneral {
 			Write-Host "-Korean Office Suite"
 			Write-Host "-IMDb App"
 			Write-Host "-A Pre-installed Game (tachyon)"
+			Write-Host "-Polaris Viewer"
+			Write-Host "-Old Keyboard"
+			Write-Host "-Samsung Experience"
+			Write-Host "-Samsung Cloud"
+			Write-Host "-Samsung Live Drawings"
+			Write-Host "-Samsung Experience Component"
+			Write-Host "-Part of Travel App"
+			Write-Host "-App that Logs things"
+			Write-Host "-Samsung Voice Component"
+			Write-Host "-Story Album"
+			Write-Host "-S finder"
+			Write-Host "-Connects phone with car"
 			Write-Host ""
 			Show-Menu-Ask -Title "General Bloatware" -runfunction "RemoveGeneral"
 		}
@@ -166,6 +178,8 @@ Function AskRecreationalApps {
 			Write-Host "-Live Message"
 			Write-Host "-OneDrive"
 			Write-Host "-Dictionary"
+			Write-Host "Groupcast (Share files with other galaxy devices)"
+			Write-Host "Widget for Storys"
 			Write-Host ""
 			Show-Menu-Ask -Title "Recreational Apps" -runfunction "RemoveRecreationalApps"
 		}
@@ -219,8 +233,9 @@ Function AskScreenCover {
 			Clear-Host
 			Write-Host "Note: Screencover is when you have a samsung case and it changes"
 			Write-Host "the screen when you close it to show data through a window in the case"
+			Write-Host "And Daydreams are like screensavers but only for samsunng devices"
 			Write-Host ""
-			Show-Menu-Ask -Title "Screencover" -runfunction "RemoveScreenCover"
+			Show-Menu-Ask -Title "Screencover and Daydreams" -runfunction "RemoveScreenCover"
 		}
 
 Function AskEdgeDisplay {
@@ -235,11 +250,22 @@ Function AskDex {
 
 Function AskGoogleApps {
 	Clear-Host
+	Write-Host "This will remove"
+	Write-Host "-Google Books"
+	Write-Host "-Google Docs"
+	Write-Host "-NewsStand"
+	Write-Host "-GooglePlus"
+	Write-Host "-Hangouts"
 	Show-Menu-Ask -Title "Google Apps" -runfunction "RemoveGoogleApps"
 }
 
 Function AskOffice {
 	Clear-Host
+	Write-Host "This will remove:"
+	Write-Host "Microsfot office manager"
+	Write-Host "Excel"
+	Write-Host "Powerpoint"
+	Write-Host "Word"
 	Show-Menu-Ask -Title "Microsoft Office" -runfunction "RemoveOffice"
 }
 #####
@@ -337,18 +363,29 @@ Function RemoveGeneral {
 	adb shell pm uninstall --user 0 com.imdb.mobile # IMDb App
 	Write-Host "Removing Tachyon..."
 	adb shell pm uninstall --user 0 com.google.android.apps.tachyon # A Pre-installed Game
-
+	Write-Host "Removing Polaris Viewer..."
 	adb shell pm uninstall --user 0 com.infraware.polarisoffice5 # Polaris Viewer
+	Write-Host "Removing Swype..."
 	adb shell pm uninstall --user 0 com.nuance.swype.input # Old Keyboard
+	Write-Host "Removing Samsung Experience..."
 	adb shell pm uninstall --user 0 com.samsung.android.mobileservice # Samsung Experience
+	Write-Host "Removing Samsung Cloud..."
 	adb shell pm uninstall --user 0 com.samsung.android.scloud # Samsung Cloud
+	Write-Host "Removing Samsung Live Drawings..."
 	adb shell pm uninstall --user 0 com.samsung.android.service.livedrawing # Samsung Live Drawings
+	Write-Host "Removing Samsung Experience Component..."
 	adb shell pm uninstall --user 0 com.samsung.android.service.travel # Samsung Experience Component
+	Write-Host "Removing Travel App Component..."
 	adb shell pm uninstall --user 0 com.samsung.android.tripwidget # Part of Travel App
+	Write-Host "Remove Fresco Logging..."
 	adb shell pm uninstall --user 0 com.samsung.fresco.logging # App that Logs things
+	Write-Host "Removing Samsung Voice Component..."
 	adb shell pm uninstall --user 0 com.samsung.voiceserviceplatform # Samsung Voice Component
+	Write-Host "Removing Story Album..."
 	adb shell pm uninstall --user 0 com.samsung.android.app.episodes # Story Album
+	Write-Host "Removing S finder..."
 	adb shell pm uninstall --user 0 com.samsung.android.app.galaxyfinder # S finder
+	Write-Host "Removing Mirrorlink..."
 	adb shell pm uninstall --user 0 com.samsung.android.app.mirrorlink # Connects phone with car
 }
 
@@ -454,7 +491,7 @@ Function RemoveScreenCover {
 	adb shell pm uninstall --user 0 com.samsung.android.app.ledbackcover # Used with samsung cases
 	adb shell pm uninstall --user 0 com.sec.android.cover.ledcover # Used with samsung cases
 	adb shell pm uninstall --user 0 com.samsung.android.app.ledcoverdream # Led Cover Screensaver
-
+Write-Host "Removing Daydreams..."
 	adb shell pm uninstall --user 0 com.android.dreams.basic # Like Screensavers (Daydreams)
 	adb shell pm uninstall --user 0 com.android.dreams.phototable # Componate of Daydreams
 	adb shell pm uninstall --user 0 com.samsung.daydream.customization # Daydream component
@@ -485,9 +522,13 @@ Function RemoveDex {
 Function RemoveGoogleApps {
 	Write-Host "Removing Google Books..."
 	adb shell pm uninstall --user 0 com.google.android.apps.books # Google Books
+	Write-Host "Removing Google Docs..."
 	adb shell pm uninstall --user 0 com.google.android.apps.docs # Google Docs
+	Write-Host "Removing News Stand..."
 	adb shell pm uninstall --user 0 com.google.android.apps.magazines # NewsStand
+	Write-Host "Removing Google Plus..."
 	adb shell pm uninstall --user 0 com.google.android.apps.plus # GooglePlus
+	Write-Host "Removing Hangouts..."
 	adb shell pm uninstall --user 0 com.google.android.talk # Hangouts
 }
 
