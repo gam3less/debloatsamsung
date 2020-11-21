@@ -316,8 +316,6 @@ Function RemoveGeneral {
 	adb shell pm uninstall --user 0 com.google.android.feedback # Google feedback
 	#Write-Host "Removing VPN dialogs..."
 	#adb shell pm uninstall --user 0 com.android.vpndialogs
-	Write-Host "Removing Samsung Wallpapers..."
-	adb shell pm uninstall --user 0 com.samsung.android.app.dressroom # Samsung Wallpapers
 	Write-Host "Removing Samsung Cloud..."
 	adb shell pm uninstall --user 0 com.samsung.android.scloud # Samsung Cloud
 	Write-Host "Removing Hardwriting for note devices..."
