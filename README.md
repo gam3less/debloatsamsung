@@ -5,7 +5,7 @@ Trello: https://trello.com/b/YZOdDKBz/
 ## Contents
  - [Description](#description)
  - [Usage](#usage)
- - [Devices Tested](#devices tested)
+ - [Devices Tested](#devices-tested)
  - [Contributions](#contributions)
 
 &nbsp;
