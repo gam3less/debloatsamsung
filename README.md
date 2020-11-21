@@ -5,6 +5,7 @@ Trello: https://trello.com/b/YZOdDKBz/
 ## Contents
  - [Description](#description)
  - [Usage](#usage)
+ - [Devices Tested](#devices tested)
  - [Contributions](#contributions)
 
 &nbsp;
@@ -28,6 +29,12 @@ If you would just like to run the script as it is run the following command in p
 
 If you want to edit the script feel free to download it and run it.
 
+&nbsp;
+
+## Devices Tested
+- Samsung Galaxy S7
+- Samsung Galaxy A50
+- Samsung Galaxy A20
 &nbsp;
 
 ## Contributions
