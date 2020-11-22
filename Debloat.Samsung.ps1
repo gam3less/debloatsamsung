@@ -158,7 +158,8 @@ Function AskGeneral {
 			Write-Host "-Samsung Voice Component"
 			Write-Host "-Story Album"
 			Write-Host "-S finder"
-			Write-Host "-Connects phone with car"
+			Write-Host "-Mirrorlink (Connects phone with car)"
+			Write-Host "-First Weather"
 			Write-Host ""
 			Show-Menu-Ask -Title "General Bloatware" -runfunction "RemoveGeneral"
 		}
@@ -385,6 +386,8 @@ Function RemoveGeneral {
 	adb shell pm uninstall --user 0 com.samsung.android.app.galaxyfinder # S finder
 	Write-Host "Removing Mirrorlink..."
 	adb shell pm uninstall --user 0 com.samsung.android.app.mirrorlink # Connects phone with car
+	Write-Host "Removing First Weather..."
+	adb shell pm uninstall --user 0 com.firstscreen.weather # First weather
 }
 
 Function RemoveSamsungPay {
@@ -410,8 +413,9 @@ Function RemoveRecreationalApps {
 	adb shell pm uninstall --user 0 com.microsoft.skydrive # One Drive
 	Write-Host "Removing Lookup Dictionary"
 	adb shell pm uninstall --user 0 com.diotek.sec.lookup.dictionary # Dictionary
-
+	Write-Host "Removing Groupcast..."
 	adb shell pm uninstall --user 0 com.samsung.groupcast # Share files with other galaxy devices
+	Write-Host "Removing Story Albumwidget..."
 	adb shell pm uninstall --user 0 com.samsung.android.app.storyalbumwidget # Widget for Storys
 }
 
