@@ -25,7 +25,8 @@ $tweaks = @(
 	"AskEdgeDisplay",
 	"AskDex",
 	"AskGoogleApps",
-	"AskOffice"
+	"AskOffice",
+	"Thankyou"
 )
 # Explains to the user what to do and asks
 Function HowTo {
@@ -268,6 +269,12 @@ Function AskOffice {
 	Write-Host "Powerpoint"
 	Write-Host "Word"
 	Show-Menu-Ask -Title "Microsoft Office" -runfunction "RemoveOffice"
+}
+
+Function Thankyou {
+	Clear-Host
+	Write-Host "Thank you for using my script"
+	Write-Host "Have a nice day - Gam3less"
 }
 #####
 # Place a # before anything you dont want to remove
